@@ -15,6 +15,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     HeroesComponent,
     HeroDetailsComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -33,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    MatCardModule,
     MatExpansionModule,
   ],
   providers: [],
