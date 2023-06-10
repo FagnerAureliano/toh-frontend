@@ -10,18 +10,21 @@ import { HeroDetailsComponent } from './heroe-details/hero-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { CoreModule } from './core/core.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailsComponent,
-    DashboardComponent,
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+
+    DashboardModule,
+
+    AppRoutingModule,
     CoreModule,
   ],
   providers: [],

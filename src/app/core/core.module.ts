@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from '../material/material.module';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
