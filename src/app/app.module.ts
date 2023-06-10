@@ -5,17 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailsComponent } from './heroe-details/hero-details.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HeroesModule } from './heroes/heroes.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +19,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserAnimationsModule,
 
     DashboardModule,
+    HeroesModule,
 
     AppRoutingModule,
     CoreModule,
