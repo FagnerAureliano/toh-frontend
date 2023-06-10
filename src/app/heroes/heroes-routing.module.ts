@@ -5,17 +5,17 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 
 const routes: Routes = [
   {
-    path: 'heroes/:id',
-    component: HeroDetailsComponent,
+    path: '',
+    component: HeroesComponent,
   },
   {
-    path: 'heroes',
-    component: HeroesComponent,
+    path: ':id',
+    component: HeroDetailsComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HeroesRoutingModule { }
+export class HeroesRoutingModule {}
