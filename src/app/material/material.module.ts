@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 const MODULES = [
   MatToolbarModule,
@@ -19,6 +21,7 @@ const MODULES = [
   MatInputModule,
   MatExpansionModule,
   MatTableModule,
+  MatProgressBarModule
 ];
 
 @NgModule({
