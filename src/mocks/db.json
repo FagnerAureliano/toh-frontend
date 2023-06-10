@@ -1,0 +1,44 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Batman"
+    },
+    {
+      "id": 2,
+      "name": "Superman"
+    },
+    {
+      "id": 3,
+      "name": "Mulher-Maravilha"
+    },
+    {
+      "id": 4,
+      "name": "Flash"
+    },
+    {
+      "id": 5,
+      "name": "Lanterna Verde"
+    },
+    {
+      "id": 6,
+      "name": "Aquaman"
+    },
+    {
+      "id": 7,
+      "name": "Arqueiro Verde"
+    },
+    {
+      "id": 8,
+      "name": "Asa Noturna"
+    },
+    {
+      "id": 9,
+      "name": "Mulher-Gato"
+    },
+    {
+      "id": 10,
+      "name": "Coringa"
+    }
+  ]
+}

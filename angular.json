@@ -49,6 +49,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -69,7 +72,8 @@
               "browserTarget": "toh-frontend:build:production"
             },
             "development": {
-              "browserTarget": "toh-frontend:build:development"
+              "browserTarget": "toh-frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
