@@ -1,43 +1,47 @@
 <div>
   <h1>{{ isEditing ? "Update" : "Create" }} Hero</h1>
 
-  <mat-card>
-    <mat-card-content fxLayout="column">
-      <mat-form-field appearance="fill" *ngIf="isEditing">
-        <mat-label>ID</mat-label>
-        <input matInput disabled [value]="hero.id" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Hero name</mat-label>
-        <input
-          id="name"
-          matInput
-          placeholder="Name"
-          [(ngModel)]="hero.name"
-          type="text"
-        />
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions class="actions">
-      <button
-        *ngIf="!isEditing"
-        mat-raised-button
-        [disabled]="!isFormValid()"
-        color="primary"
-        (click)="create()"
-      >
-        Create
-      </button>
-      <button
-        *ngIf="isEditing"
-        mat-raised-button
-        [disabled]="!isFormValid()"
-        color="primary"
-        (click)="update()"
-      >
-        Update
-      </button>
-      <button mat-raised-button (click)="goBack()">Go back</button>
-    </mat-card-actions>
-  </mat-card>
+  <form [formGroup]="form" novalidate>
+    <mat-card>
+      <mat-card-content fxLayout="column">
+        <mat-form-field appearance="fill" *ngIf="isEditing">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Hero name</mat-label>
+          <input
+            id="name"
+            matInput
+            placeholder="Name"
+            formControlName="name"
+            type="text"
+          />
+          <mat-error *ngIf="form.controls['name'].hasError('required')">Name is required.</mat-error>
+          <mat-error *ngIf="form.controls['name'].hasError('minlength')">Name should contains at least 3 characters.</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="actions">
+        <button
+          *ngIf="!isEditing"
+          mat-raised-button
+          [disabled]="form.invalid"
+          color="primary"
+          (click)="create()"
+        >
+          Create
+        </button>
+        <button
+          *ngIf="isEditing"
+          mat-raised-button
+          [disabled]="form.invalid"
+          color="primary"
+          (click)="update()"
+        >
+          Update
+        </button>
+        <button mat-raised-button (click)="goBack()">Go back</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
 </div>
