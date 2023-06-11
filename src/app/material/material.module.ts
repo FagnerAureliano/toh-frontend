@@ -11,6 +11,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const MODULES = [
   MatIconModule,
@@ -25,6 +26,7 @@ const MODULES = [
   MatSnackBarModule,
   MatExpansionModule,
   MatProgressBarModule,
+  MatAutocompleteModule,
 ];
 
 @NgModule({
