@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
+import { HttpErrorInterceptor } from './interceptor/http-error.interceptor';
 
 const COMPONENTS = [
   LoadingComponent,
@@ -24,6 +25,7 @@ const MODULES = [FlexLayoutModule, MaterialModule, RouterModule];
   exports: [COMPONENTS, FlexLayoutModule, MaterialModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
   ],
 })
 export class CoreModule {
