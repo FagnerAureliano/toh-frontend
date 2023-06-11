@@ -31,6 +31,13 @@ export class HeroService {
       .post<Hero>(`${this.heroesUrl}`, hero)
       .pipe(tap((hero) => this.log(`create ${this.descAttributes(hero)}`)));
   }
+  delete({ id, name }: Hero): Observable<any> {
+    return this.http
+      .delete<any>(`${this.heroesUrl}/${id}`)
+      .pipe(
+        tap(() => this.log(`deleted ${this.descAttributes({ id, name })}`))
+      );
+  }
   update(hero: Hero): Observable<Hero> {
     return this.http
       .put<Hero>(`${this.heroesUrl}/${hero.id}`, hero)
