@@ -2,6 +2,7 @@
 <button class="add-button" color="primary" mat-fab routerLink="new">
   <mat-icon>add</mat-icon>
 </button>
+<app-hero-search [label]="'Hero to delete'" (selected)="onSelected($event)"  ></app-hero-search>
 <mat-table [dataSource]="heroes" class="mat-elevation-z3">
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>

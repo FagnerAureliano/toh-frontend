@@ -1,6 +1,13 @@
 <mat-form-field appearance="fill" class="input-width">
   <mat-label>{{ label }}</mat-label>
-  <input [matAutocomplete]="auto" #searchBox type="text" (input)="search(searchBox.value)" matInput placeholder="Hero name" />
+  <input
+    [matAutocomplete]="auto"
+    #searchBox
+    type="text"
+    (input)="search(searchBox.value)"
+    matInput
+    placeholder="Hero name"
+  />
   <button
     mat-icon-button
     matSuffix
