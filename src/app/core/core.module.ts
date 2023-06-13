@@ -8,9 +8,10 @@ import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './interceptor/loading.interceptor';
-import { HttpErrorInterceptor } from './interceptor/http-error.interceptor';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 const COMPONENTS = [
   LoadingComponent,
@@ -28,6 +29,7 @@ const MODULES = [FlexLayoutModule, MaterialModule, RouterModule];
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
 })
 export class CoreModule {
