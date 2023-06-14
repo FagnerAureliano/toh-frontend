@@ -1,4 +1,11 @@
-<app-toolbar [title]="title" [menuItems]="menuItems"></app-toolbar>
+<app-toolbar
+  [title]="title"
+  [isLoggedIn]="isLoggedIn$ | async"
+  [menuItems]="menuItems"
+  (logout)="onLogout()"
+>
+  ></app-toolbar
+>
 <app-loading></app-loading>
 <div class="content" fxLayoutGap="12px">
   <router-outlet></router-outlet>

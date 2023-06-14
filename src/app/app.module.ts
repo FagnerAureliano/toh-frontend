@@ -9,16 +9,14 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    AuthModule,
     CoreModule,
-    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],

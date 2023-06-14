@@ -1,13 +1,32 @@
 <mat-toolbar color="primary">
   <span>{{ title }}</span>
   <span fxFlex></span>
-  <button
-    mat-icon-button
-    *ngFor="let menuItem of menuItems"
-    [matTooltip]="menuItem.tooltipText"
-    aria-label="menuItem.tooltipText"
-    [routerLink]="[menuItem.routerLink]"
+  <ng-container *ngIf="isLoggedIn">
+    <button
+      mat-icon-button
+      *ngFor="let menuItem of menuItems"
+      [matTooltip]="menuItem.tooltipText"
+      aria-label="menuItem.tooltipText"
+      [routerLink]="[menuItem.routerLink]"
+    >
+      <mat-icon>{{ menuItem.icon }}</mat-icon>
+    </button>
+  </ng-container>
+  <a
+    routerLink="/login"
+    *ngIf="!isLoggedIn"
+    matTooltip="Login into app"
+    mat-button
   >
-    <mat-icon>{{ menuItem.icon }}</mat-icon>
-  </button>
+    Login
+  </a>
+  <div *ngIf="isLoggedIn">
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onLogout()">Logout</button>
+  </mat-menu>
 </mat-toolbar>

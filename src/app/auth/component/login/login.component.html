@@ -1,29 +1,39 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
+<div class="card-container">
+  <mat-card>
+    <mat-card-header class="form_title">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
 
-  <mat-card-content>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <P>
-        <mat-form-field>
-          <input formControlName="email" matInput placeholder="Email" type="email" />
-        </mat-form-field>
-        <mat-hint>
-          CAUTION: Do not reuse any of  your exis
-        </mat-hint>
-      </P>
-      <P>
-        <mat-form-field>
-          <input formControlName="password" matInput placeholder="Password" type="password" />
-        </mat-form-field>
-      </P>
-      <p>
-        <button color="primary" mat-raised-button type="submit">Login</button>
-      </p>
-      <p>
-        <a href="" mat-button>Forgot password?</a>
-      </p>
-    </form>
-  </mat-card-content>
-</mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <P>
+          <mat-form-field class="form_field">
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Email"
+              type="email"
+            />
+          </mat-form-field>
+        </P>
+        <P>
+          <mat-form-field class="form_field">
+            <input
+            formControlName="password"
+            matInput
+            placeholder="Password"
+            type="password"
+            />
+            <!-- <mat-hint> CAUTION: Do not reuse any of your existing password.</mat-hint> -->
+          </mat-form-field>
+        </P>
+        <p>
+          <button color="primary" mat-raised-button type="submit">Login</button>
+        </p>
+        <p>
+          <a href="" mat-button>Forgot password?</a>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -18,11 +18,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./heroes/heroes.module').then((m) => m.HeroesModule),
   },
-  {
-    path: '**',
-    component: PageNotFoundComponent
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
 
-  }
+  // }
 ];
 
 @NgModule({

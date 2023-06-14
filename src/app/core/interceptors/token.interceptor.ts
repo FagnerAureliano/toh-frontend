@@ -13,11 +13,12 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    let token = localStorage.getItem('token');
-    if (!token) {
-      token = this.generateToken();
-      localStorage.setItem('token', JSON.stringify(token));
-    }
+    // eslint-disable-next-line prefer-const
+    let token = localStorage.getItem('token') || '';
+    // if (!token) {
+    //   token = this.generateToken();
+    //   localStorage.setItem('token', JSON.stringify(token));
+    // }
 
     request = request.clone({
       setHeaders: {
