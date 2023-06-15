@@ -9,5 +9,5 @@
 <app-loading></app-loading>
 <div class="content" fxLayoutGap="12px">
   <router-outlet></router-outlet>
-  <app-messages></app-messages>
+  <app-messages *ngIf="isLoggedIn$ | async"></app-messages>
 </div>

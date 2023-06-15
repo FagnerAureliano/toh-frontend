@@ -19,12 +19,20 @@
         <P>
           <mat-form-field class="form_field">
             <input
-            formControlName="password"
-            matInput
-            placeholder="Password"
-            type="password"
+              formControlName="password"
+              matInput
+              placeholder="Password"
+              type="password"
             />
-            <!-- <mat-hint> CAUTION: Do not reuse any of your existing password.</mat-hint> -->
+            <mat-hint>
+              CAUTION: Do not reuse any of your existing password.</mat-hint
+            >
+            <mat-error *ngIf="form.controls['password'].hasError('required')">
+              Password is required
+            </mat-error>
+            <mat-error *ngIf="form.controls['password'].hasError('minlength')">
+              Password should contain at least 10 characters
+            </mat-error>
           </mat-form-field>
         </P>
         <p>

@@ -22,4 +22,12 @@ export class AuthService {
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
   }
+  updatedLoggedIn(): void {
+    const token = localStorage.getItem('login');
+    if (token) {
+      this.loggedIn.next(true);
+    } else {
+      this.loggedIn.next(false);
+    }
+  }
 }
