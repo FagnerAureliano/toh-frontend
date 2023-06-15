@@ -8,12 +8,19 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    //@angular
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    //third-party modules
+    FlexLayoutModule,
+
+    //app
     AppRoutingModule,
     AuthModule,
     CoreModule,

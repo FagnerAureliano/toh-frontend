@@ -13,7 +13,7 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
-const COMPONENTS = [
+const CORE_COMPONENTS = [
   LoadingComponent,
   ToolbarComponent,
   MessagesComponent,
@@ -23,9 +23,9 @@ const COMPONENTS = [
 const MODULES = [FlexLayoutModule, MaterialModule, RouterModule];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [CORE_COMPONENTS],
   imports: [CommonModule, MODULES],
-  exports: [COMPONENTS, FlexLayoutModule, MaterialModule],
+  exports: [CORE_COMPONENTS],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
