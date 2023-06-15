@@ -12,6 +12,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { IconsModule } from '../icons/icons.module';
 
 const CORE_COMPONENTS = [
   LoadingComponent,
@@ -20,7 +21,7 @@ const CORE_COMPONENTS = [
   PageNotFoundComponent,
   ConfirmationDialogComponent,
 ];
-const MODULES = [FlexLayoutModule, MaterialModule, RouterModule];
+const MODULES = [FlexLayoutModule, IconsModule, MaterialModule, RouterModule];
 
 @NgModule({
   declarations: [CORE_COMPONENTS],

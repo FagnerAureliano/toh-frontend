@@ -9,7 +9,9 @@
       aria-label="menuItem.tooltipText"
       [routerLink]="[menuItem.routerLink]"
     >
-      <mat-icon>{{ menuItem.icon }}</mat-icon>
+      <fa-icon *ngIf="!!menuItem.fasIcon"  [icon]="['fas', menuItem.fasIcon]"></fa-icon>
+
+      <mat-icon *ngIf="!!menuItem.matIcon">{{ menuItem.matIcon }}</mat-icon>
     </button>
   </ng-container>
   <a
